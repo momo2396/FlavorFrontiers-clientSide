@@ -79,10 +79,10 @@ const Navbar = () => {
 
   return (
     <div className={`py-10 px-5 navbar`}>
-      <div>
-        <div className="navbar-start">
-          <div className="dropdown">
-            <label tabIndex={0} className="btn btn-ghost lg:hidden">
+      <div className="navbar-start">
+        <div>
+          <div className="dropdown  lg:hidden">
+            <label tabIndex={0} className="btn btn-ghost">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -124,10 +124,8 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{l1}</ul>
       </div>
-      <div className="flex flex-col lg:flex-row navbar-end  py-5 lg:py-0 gap-3">
-        {l2}
-      </div>
-      {user && (
+
+      {user ? (
         <div className="flex flex-col md:flex-row gap-5 justify-center items-center">
           <div className="flex flex-row justify-center items-center gap-5 ">
             <img
@@ -144,6 +142,10 @@ const Navbar = () => {
               Logout
             </button>
           </div>
+        </div>
+      ) : (
+        <div className="flex flex-col lg:flex-row navbar-end  py-5 lg:py-0 gap-3">
+          {l2}
         </div>
       )}
     </div>
