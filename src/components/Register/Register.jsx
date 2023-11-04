@@ -60,7 +60,7 @@ const Register = () => {
       <div className="hero min-h-screen bg-black text-white bg-opacity-80">
         <div className="gap-20 hero-content flex-col lg:flex-row w-full h-full">
           <div className="flex justify-center items-center w-full lg:w-1/2  text-center lg:text-left">
-            <h1 className="text-5xl font-bold text-[#a294cd] font-serif">
+            <h1 className="text-5xl font-bold text-[#b40000] font-serif">
               Register now!
             </h1>
           </div>
