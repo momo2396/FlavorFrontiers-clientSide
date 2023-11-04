@@ -6,7 +6,7 @@ const defaultStyle = "text-xl text-center px-5 py-1";
 const activeStyle =
   "bg-clip-text text-transparent bg-gradient-to-r  to-[#b40000] from-[#540000] font-bold underline";
 const Navbar = () => {
-  const { user, logoutUser, dark, setDark } = useContext(AuthContext);
+  const { user, logoutUser, dark } = useContext(AuthContext);
 
   const handleLogOut = () => {
     logoutUser()
@@ -100,11 +100,7 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className={`menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow ${
-                !dark
-                  ? "bg-base-200 text-base-content"
-                  : "bg-base-content text-base-200"
-              } rounded-box w-52`}
+              className={`menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow`}
             >
               {l1}
             </ul>
