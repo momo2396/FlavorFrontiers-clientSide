@@ -93,7 +93,10 @@ const Login = () => {
               </div>
               <div className="flex flex-col justify-center items-center py-5">
                 <p className="text-lg font-semibold">Log in with </p>
-                <div className="btn px-6 h-16" onClick={handleGoogleLogin}>
+                <div
+                  className="btn px-6 h-16 bg-gradient-to-t to-[#b40000] from-[#540000]"
+                  onClick={handleGoogleLogin}
+                >
                   {" "}
                   <FcGoogle className="text-5xl"></FcGoogle>
                 </div>

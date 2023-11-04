@@ -6,7 +6,7 @@ const defaultStyle = "text-xl text-center px-5 py-1";
 const activeStyle =
   "bg-clip-text text-transparent bg-gradient-to-r  to-[#b40000] from-[#540000] font-bold underline";
 const Navbar = () => {
-  const { user, logoutUser, dark } = useContext(AuthContext);
+  const { user, logoutUser } = useContext(AuthContext);
 
   const handleLogOut = () => {
     logoutUser()
