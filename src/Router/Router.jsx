@@ -8,6 +8,8 @@ import Profile from "../components/Profile/Profile";
 import PrivateRoute from "./PrivateRoute";
 import AllFoods from "../components/AllFoods/AllFoods";
 import SingleFood from "../components/SingleFood/SingleFood";
+import OrderFood from "../components/OrderFood/OrderFood";
+import OrderedPage from "../components/OrderedPage/OrderedPage";
 
 const router = createBrowserRouter([
   {
@@ -45,9 +47,21 @@ const router = createBrowserRouter([
       },
       {
         path: "/singleFood/:id",
+        element: <SingleFood></SingleFood>,
+      },
+      {
+        path: "/orderFood/:id",
         element: (
           <PrivateRoute>
-            <SingleFood></SingleFood>
+            <OrderFood></OrderFood>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/orderedPage",
+        element: (
+          <PrivateRoute>
+            <OrderedPage></OrderedPage>
           </PrivateRoute>
         ),
       },
