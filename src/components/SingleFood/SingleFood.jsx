@@ -52,5 +52,3 @@ const SingleFood = () => {
 };
 
 export default SingleFood;
-
-//////hhhhhhhhhh
