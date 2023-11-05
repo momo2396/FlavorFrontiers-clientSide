@@ -37,9 +37,9 @@ const Navbar = () => {
         className={({ isActive }) =>
           `${defaultStyle} ${isActive && activeStyle}`
         }
-        to="/addProduct"
+        to="/allFoods"
       >
-        Add Product
+        Our Foods
       </NavLink>
       <NavLink
         className={({ isActive }) =>
@@ -128,10 +128,25 @@ const Navbar = () => {
       {user ? (
         <div className="flex flex-col md:flex-row gap-5 justify-center items-center">
           <div className="flex flex-row justify-center items-center gap-5 ">
-            <img
-              className="w-10 h-10 rounded-full border-2 border-blue-500 p-0.5"
-              src={user?.photoURL}
-            />
+            <div className="dropdown dropdown-bottom dropdown-end">
+              <label tabIndex={0} className=" m-1">
+                <img
+                  className="w-10 h-10 rounded-full border-2 border-blue-500 p-0.5"
+                  src={user?.photoURL}
+                />
+              </label>
+              <ul
+                tabIndex={0}
+                className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <li>
+                  <a>Item 1</a>
+                </li>
+                <li>
+                  <a>Item 2</a>
+                </li>
+              </ul>
+            </div>
             <div>{user?.displayName}</div>
           </div>
           <div>
