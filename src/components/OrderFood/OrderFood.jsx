@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet";
 
 const OrderFood = () => {
   const location = useLocation();
@@ -62,6 +63,9 @@ const OrderFood = () => {
   };
   return (
     <div className="lg:bg-red-900 lg:px-5 py-10 flex flex-col lg:flex-row gap-5 max-w-[1440px] mx-auto font-serif shadow-2xl">
+      <Helmet>
+        <title>Order-Flavor Frontiers</title>
+      </Helmet>
       <div className="flex justify-center text-white font-bold text-xl">
         <div className="bg-red-700 p-5 rounded-lg flex flex-col gap-3">
           <p>{food?.food_name}</p>

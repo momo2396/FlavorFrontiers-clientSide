@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { toast } from "react-toastify";
 import { postUser } from "../../providers/postUser";
+import { Helmet } from "react-helmet";
 const Register = () => {
   const { createUser, setLoading, updateUser } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -65,6 +66,9 @@ const Register = () => {
       className="hero min-h-screen"
       style={{ backgroundImage: `url("${b1}")` }}
     >
+      <Helmet>
+        <title>Register-Flavor Frontiers</title>
+      </Helmet>
       <div className="hero min-h-screen bg-black text-white bg-opacity-80">
         <div className="gap-20 hero-content flex-col lg:flex-row w-full h-full">
           <div className="flex justify-center items-center w-full lg:w-1/2  text-center lg:text-left">
