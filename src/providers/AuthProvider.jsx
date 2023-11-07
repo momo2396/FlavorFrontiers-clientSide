@@ -8,7 +8,7 @@ import {
   signInWithPopup,
   updateProfile,
 } from "firebase/auth";
-import auth from "../firebase/firebase.config";
+import auth from "../components/firebase/firebase.config";
 export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
@@ -40,7 +40,6 @@ const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
-      console.log(currentUser);
       // if (currentUser?.email) {
       //   const res = await fetch(
       //     `https://assignment11-server-side-hazel.vercel.app/user?email=${currentUser?.email}`
