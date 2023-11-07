@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 
 const ErrorPage = () => {
@@ -8,6 +9,9 @@ const ErrorPage = () => {
         backgroundImage: `url("https://i.ibb.co/my4Whs0/spaghetti-bolognese.jpg")`,
       }}
     >
+      <Helmet>
+        <title>Error Page-FlavorFrontiers</title>
+      </Helmet>
       <div className="w-full lg:w-1/2 flex flex-col items-center justify-center lg:px-2 xl:px-0 text-center bg-white py-20 bg-opacity-60">
         <p className="text-7xl md:text-8xl lg:text-9xl font-bold tracking-wider text-red-800">
           404

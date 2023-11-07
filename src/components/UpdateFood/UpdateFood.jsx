@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { useLocation } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -83,6 +84,9 @@ const UpdateFood = () => {
   };
   return (
     <div className="px-5 py-10 bg-[#fef9f8] flex flex-col gap-5 justify-center items-center">
+      <Helmet>
+        <title>Update {food?.food_name}-FlavorFrontiers</title>
+      </Helmet>
       <h3 className="text-4xl font-bold font-serif text-red-800">
         Update Food: {food?.food_name}
       </h3>

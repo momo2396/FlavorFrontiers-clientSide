@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { BsArrowRightShort } from "react-icons/bs";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet";
 const SingleFood = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -33,6 +34,9 @@ const SingleFood = () => {
   };
   return (
     <div className="max-w-[1700px] font-serif font-bold mx-auto px-5 py-20 flex flex-col gap-5">
+      <Helmet>
+        <title>{food?.food_name}-FlavorFrontiers</title>
+      </Helmet>
       <div className="text-lg text-white relative flex flex-row gap-5 justify-center items-end">
         <div className="flex flex-col gap-3  bg-red-700 rounded-lg p-5">
           <p>Category: {food?.food_category}</p>

@@ -2,6 +2,7 @@ import Search from "./Search";
 import FoodCard from "./FoodCard";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Helmet } from "react-helmet";
 
 const AllFoods = () => {
   const [foods, setFoods] = useState([]);
@@ -43,6 +44,9 @@ const AllFoods = () => {
   }, [filter, searchFood, curPage]);
   return (
     <div>
+      <Helmet>
+        <title>Our Foods-FlavorFrontiers</title>
+      </Helmet>
       <Search setFilter={setFilter} setSearchFood={setSearchFood}></Search>
       {foods?.length > 0 && (
         <h3 className="max-w-[1440px] lg:mx-auto px-5 text-center pt-10 text-red-900 font-bold font-serif text-5xl">
