@@ -70,7 +70,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className={`py-10 px-5 navbar`}>
+    <div className={`py-10 px-5 navbar z-50`}>
       <div className="navbar-start">
         <div>
           <div className="dropdown  lg:hidden">

@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../providers/AuthProvider";
+import { Helmet } from "react-helmet";
 const AddFood = () => {
   const { user } = useContext(AuthContext);
   const handleAdd = (e) => {
@@ -69,6 +70,9 @@ const AddFood = () => {
   const [food, setFood] = useState(null);
   return (
     <div className="px-5 py-10 flex flex-col gap-5 justify-center items-center">
+      <Helmet>
+        <title>Add a Food-FlavorFrontiers</title>
+      </Helmet>
       <h3 className="text-4xl font-bold font-serif text-red-800">Add Food</h3>
       <p className="text-lg font-thin font-serif text-red-800">
         Please, maintain the food authenticity
