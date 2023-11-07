@@ -1,7 +1,7 @@
 const Contact = () => {
   return (
     <div className="max-w-[1440px] mx-auto px-5 py-10">
-      <h3 className="font-serif text-center text-xl lg:text-4xl text-[#a294cd] font-bold pb-5">
+      <h3 className="font-serif text-center text-xl lg:text-4xl text-red-800 font-bold pb-5">
         GET IN TOUCH WITH US
       </h3>
       <form className="card-body text-black bg-slate-100 rounded-lg">
@@ -56,7 +56,7 @@ const Contact = () => {
           <input
             type="submit"
             value="Contact Us"
-            className="btn bg-[#a294cd] border-[#a294cd] hover:bg-[#a294cd] text-white flex-1"
+            className="btn bg-red-800 border-red-800 hover:bg-red-800 text-white flex-1 font-serif"
           />
         </div>
       </form>

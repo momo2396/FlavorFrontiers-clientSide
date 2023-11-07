@@ -28,14 +28,16 @@ const Navbar = () => {
       >
         Home
       </NavLink>
-      <NavLink
-        className={({ isActive }) =>
-          `${defaultStyle} ${isActive && activeStyle}`
-        }
-        to="/profile"
-      >
-        Profile
-      </NavLink>
+      {user?.email && (
+        <NavLink
+          className={({ isActive }) =>
+            `${defaultStyle} ${isActive && activeStyle}`
+          }
+          to="/profile"
+        >
+          Profile
+        </NavLink>
+      )}
       <NavLink
         className={({ isActive }) =>
           `${defaultStyle} ${isActive && activeStyle}`
@@ -43,6 +45,14 @@ const Navbar = () => {
         to="/allFoods"
       >
         Our Foods
+      </NavLink>
+      <NavLink
+        className={({ isActive }) =>
+          `${defaultStyle} ${isActive && activeStyle}`
+        }
+        to="/blog"
+      >
+        Blog
       </NavLink>
     </>
   );

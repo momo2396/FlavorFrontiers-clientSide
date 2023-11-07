@@ -13,6 +13,7 @@ import OrderedPage from "../components/OrderedPage/OrderedPage";
 import AddedFood from "../components/AddedFood/AddedFood";
 import AddFood from "../components/AddFood/AddFood";
 import UpdateFood from "../components/UpdateFood/UpdateFood";
+import Blog from "../components/Blog/Blog";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "/allFoods",
         element: <AllFoods></AllFoods>,
+      },
+      {
+        path: "/blog",
+        element: <Blog></Blog>,
       },
       {
         path: "/profile",
