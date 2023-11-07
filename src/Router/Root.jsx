@@ -4,8 +4,8 @@ import Navbar from "../components/Navbar/Navbar";
 
 const Root = () => {
   return (
-    <div>
-      <div className="w-full flex flex-col justify-between">
+    <div className="">
+      <div className=" w-full flex flex-col justify-between">
         <Navbar></Navbar>
         <Outlet />
       </div>

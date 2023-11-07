@@ -14,13 +14,15 @@ const OrderFood = () => {
   const [plus, setPlus] = useState(1);
   useEffect(() => {
     axios
-      .get(`https://assignment11-server-side-hazel.vercel.app/all-foods`)
+      .get(
+        `https://assignment11-server-side-hazel.vercel.app/single-food?id=${id}`
+      )
       .then((result) => {
         console.log(result.data);
-        const match = result?.data?.find((f) => f?._id === id);
-        if (match) {
-          setFood(match);
-        } else navigate("/allFoods");
+        // const match = result?.data?.find((f) => f?._id === id);
+        // if (match) {
+        setFood(result?.data);
+        // } else navigate("/allFoods");
       })
       .catch((error) => {
         console.log(error);

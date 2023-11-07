@@ -10,6 +10,9 @@ import AllFoods from "../components/AllFoods/AllFoods";
 import SingleFood from "../components/SingleFood/SingleFood";
 import OrderFood from "../components/OrderFood/OrderFood";
 import OrderedPage from "../components/OrderedPage/OrderedPage";
+import AddedFood from "../components/AddedFood/AddedFood";
+import AddFood from "../components/AddFood/AddFood";
+import UpdateFood from "../components/UpdateFood/UpdateFood";
 
 const router = createBrowserRouter([
   {
@@ -24,10 +27,6 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login></Login>,
-      },
-      {
-        path: "/register",
-        element: <Register></Register>,
       },
       {
         path: "/register",
@@ -62,6 +61,30 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <OrderedPage></OrderedPage>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/addedFood",
+        element: (
+          <PrivateRoute>
+            <AddedFood></AddedFood>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/addFood",
+        element: (
+          <PrivateRoute>
+            <AddFood></AddFood>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/updateFood/:id",
+        element: (
+          <PrivateRoute>
+            <UpdateFood></UpdateFood>
           </PrivateRoute>
         ),
       },

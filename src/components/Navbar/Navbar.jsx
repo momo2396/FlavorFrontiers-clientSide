@@ -41,14 +41,6 @@ const Navbar = () => {
       >
         Our Foods
       </NavLink>
-      <NavLink
-        className={({ isActive }) =>
-          `${defaultStyle} ${isActive && activeStyle}`
-        }
-        to="/myCart"
-      >
-        My cart
-      </NavLink>
     </>
   );
 
@@ -139,12 +131,9 @@ const Navbar = () => {
                 tabIndex={0}
                 className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
               >
-                <li>
-                  <a>Item 1</a>
-                </li>
-                <li>
-                  <a>Item 2</a>
-                </li>
+                <Link to="/orderedPage">Your Ordered Foods</Link>
+                <Link to="/addedFood">Your Added Page</Link>
+                <Link to="/addFood">Add a Food </Link>
               </ul>
             </div>
             <div>{user?.displayName}</div>
