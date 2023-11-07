@@ -13,7 +13,6 @@ export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [dark, setDark] = useState(false);
   const [loading, setLoading] = useState(true);
   const googleProvider = new GoogleAuthProvider();
   const createUser = (email, password) => {
@@ -41,6 +40,14 @@ const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
+      console.log(currentUser);
+      // if (currentUser?.email) {
+      //   const res = await fetch(
+      //     `https://assignment11-server-side-hazel.vercel.app/user?email=${currentUser?.email}`
+      //   );
+      //   const data = await res.json();
+      //   setUser(data);
+      // }
       setUser(currentUser);
       setLoading(false);
     });
@@ -57,8 +64,8 @@ const AuthProvider = ({ children }) => {
     setLoading,
     loginWithGoogle,
     updateUser,
-    dark,
-    setDark,
+
+    setUser,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

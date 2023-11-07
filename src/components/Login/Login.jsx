@@ -4,13 +4,19 @@ import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { toast } from "react-toastify";
 import { FcGoogle } from "react-icons/fc";
+import { postUser } from "../../providers/postUser";
 const Login = () => {
   const { loginUser, setLoading, loginWithGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
   const handleGoogleLogin = () => {
     loginWithGoogle()
-      .then((result) => {
-        console.log(result.user);
+      .then(async (result) => {
+        const newUser = {
+          email: result?.user?.email,
+          displayName: result?.user?.displayName,
+          photoURL: result?.user?.photoURL,
+        };
+        await postUser(newUser);
         navigate("/profile");
         setLoading(false);
       })

@@ -6,11 +6,14 @@ const defaultStyle = "text-xl text-center px-5 py-1";
 const activeStyle =
   "bg-clip-text text-transparent bg-gradient-to-r  to-[#b40000] from-[#540000] font-bold underline";
 const Navbar = () => {
-  const { user, logoutUser } = useContext(AuthContext);
+  const { user, logoutUser, setUser } = useContext(AuthContext);
 
   const handleLogOut = () => {
     logoutUser()
-      .then(() => toast.success("LOGGED OUT SUCCESSFULLY"))
+      .then(() => {
+        toast.success("LOGGED OUT SUCCESSFULLY");
+        // setUser(null);
+      })
       .catch((error) => {
         console.log(error);
       });

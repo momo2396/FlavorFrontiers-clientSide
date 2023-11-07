@@ -77,7 +77,7 @@ const AddFood = () => {
       <p className="text-lg font-thin font-serif text-red-800">
         Please, maintain the food authenticity
       </p>
-      <div className="w-full lg:w-1/2 bg-red-800 p-3 shadow-2xl hover:scale-90 duration-300 rounded-2xl">
+      <div className="w-full lg:w-1/2 bg-red-800 p-3 shadow-2xl rounded-2xl">
         <div className="card w-full bg-base-100">
           <form onSubmit={handleAdd} className="card-body text-black">
             <div className="form-control">

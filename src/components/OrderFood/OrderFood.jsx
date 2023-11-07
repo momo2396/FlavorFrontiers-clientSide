@@ -173,8 +173,8 @@ const OrderFood = () => {
                 </div>
               </div>
             </div>
-            <div>
-              <input type="submit" value="Purchase" />
+            <div className="w-full">
+              <input className="btn w-full" type="submit" value="Purchase" />
             </div>
           </fieldset>
         </form>

@@ -3,6 +3,7 @@ import b1 from "../../assets/banner1.jpeg";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { toast } from "react-toastify";
+import { postUser } from "../../providers/postUser";
 const Register = () => {
   const { createUser, setLoading, updateUser } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -11,6 +12,8 @@ const Register = () => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
+    const displayName = e.target.name.value;
+    const photoURL = e.target.image.value;
     const lengthRegex = /.{6,}/;
     const specialCharRegex = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]/;
     const uppercaseRegex = /[A-Z]/;
@@ -28,7 +31,12 @@ const Register = () => {
     }
     if (!isLengthValid || !hasSpecialChar || !hasUppercase) return;
     createUser(email, password)
-      .then(() => {
+      .then(async () => {
+        await postUser({
+          email,
+          displayName,
+          photoURL,
+        });
         updateUser({
           displayName: e.target.name.value,
           photoURL: e.target.image.value,
