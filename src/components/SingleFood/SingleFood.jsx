@@ -1,13 +1,14 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { BsArrowRightShort } from "react-icons/bs";
 import { toast } from "react-toastify";
 import { Helmet } from "react-helmet";
+import { AuthContext } from "../../providers/AuthProvider";
 const SingleFood = () => {
   const location = useLocation();
   const navigate = useNavigate();
-
+  const { user } = useContext(AuthContext);
   const { pathname } = location;
   const id = pathname.split("/").pop();
   const [food, setFood] = useState(null);
@@ -35,7 +36,7 @@ const SingleFood = () => {
   return (
     <div className="max-w-[1700px] font-serif font-bold mx-auto px-5 py-20 flex flex-col gap-5">
       <Helmet>
-        <title>{food?.food_name}-FlavorFrontiers</title>
+        <title>{food?.food_name || "Food"}-FlavorFrontiers</title>
       </Helmet>
       <div className="text-lg text-white relative flex flex-row gap-5 justify-center items-end">
         <div className="flex flex-col gap-3  bg-red-700 rounded-lg p-5">
@@ -59,15 +60,17 @@ const SingleFood = () => {
         </ul>
         <p>Making Process: {food?.making_processes}</p>
       </div>
-      <div className="flex justify-end items-end">
-        <button
-          onClick={handleOrderNow}
-          className="bg-red-800 text-white p-4 btn hover:text-red-800 hover:bg-white"
-        >
-          {" "}
-          Order Now <BsArrowRightShort className="text-xl" />
-        </button>
-      </div>
+      {user?.email !== food?.food_maker_email && (
+        <div className="flex justify-end items-end">
+          <button
+            onClick={handleOrderNow}
+            className={`bg-red-800 text-white p-4 btn hover:text-red-800 hover:bg-white`}
+          >
+            {" "}
+            Order Now <BsArrowRightShort className="text-xl" />
+          </button>
+        </div>
+      )}
     </div>
   );
 };
