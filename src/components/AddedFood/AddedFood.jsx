@@ -30,9 +30,13 @@ const AddedFood = () => {
       <Helmet>
         <title>Your Added Foods-FlavorFrontiers</title>
       </Helmet>
-      {food?.map((f) => (
-        <FoodCard key={f?._id} f={f}></FoodCard>
-      ))}
+      {food?.length > 0 ? (
+        food?.map((f) => <FoodCard key={f?._id} f={f}></FoodCard>)
+      ) : (
+        <p className="flex justify-center items-center py-20 text-center text-5xl text-red-800 font-bold font-serif">
+          No Food Added...
+        </p>
+      )}
     </div>
   );
 };

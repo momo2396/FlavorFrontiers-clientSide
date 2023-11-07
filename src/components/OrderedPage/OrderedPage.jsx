@@ -25,13 +25,20 @@ const OrderedPage = () => {
       <Helmet>
         <title>Your Ordered Foods-FlavorFrontiers</title>
       </Helmet>
-      {orderedFoodQuery?.data?.map((food) => (
-        <FoodCard
-          key={food._id}
-          food={food}
-          refetch={orderedFoodQuery?.refetch}
-        ></FoodCard>
-      ))}
+      {orderedFoodQuery?.length > 0 ? (
+        orderedFoodQuery?.data?.map((food) => (
+          <FoodCard
+            key={food._id}
+            food={food}
+            refetch={orderedFoodQuery?.refetch}
+          ></FoodCard>
+        ))
+      ) : (
+        <p className="flex justify-center items-center py-20 text-center text-5xl text-red-800 font-bold font-serif">
+          {" "}
+          No Food Ordered.....
+        </p>
+      )}
     </div>
   );
 };

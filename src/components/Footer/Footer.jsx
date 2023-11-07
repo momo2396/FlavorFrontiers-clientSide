@@ -54,8 +54,8 @@ const Footer = () => {
       <aside>
         <p>
           Copyright © 2023 - All right reserved by{" "}
-          <span className="bg-clip-text text-transparent bg-[#a294cd]">
-            Elegance Ensemble
+          <span className="bg-clip-text text-transparent bg-red-800">
+            Flavor Frontiers
           </span>
         </p>
       </aside>

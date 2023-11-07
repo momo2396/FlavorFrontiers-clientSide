@@ -85,7 +85,7 @@ const UpdateFood = () => {
   return (
     <div className="px-5 py-10 bg-[#fef9f8] flex flex-col gap-5 justify-center items-center">
       <Helmet>
-        <title>Update {food?.food_name}-FlavorFrontiers</title>
+        <title>Update {food?.food_name || "food"}-FlavorFrontiers</title>
       </Helmet>
       <h3 className="text-4xl font-bold font-serif text-red-800">
         Update Food: {food?.food_name}
@@ -269,7 +269,7 @@ const UpdateFood = () => {
               <input
                 type="submit"
                 value="Update Now"
-                className="bg-[#a294cd] border-[#a294cd] hover:bg-[#a294cd] hover:border-[#a294cd] btn flex-1 text-[#ffe5de]"
+                className="bg-red-800 border-red-800 hover:bg-red-800 hover:border-red-800 btn flex-1 text-white"
               />
             </div>
           </form>
