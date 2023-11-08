@@ -2,9 +2,9 @@ import { Link, NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../providers/AuthProvider";
-const defaultStyle = "text-xl text-center px-5 py-1";
+const defaultStyle = "font-serif text-xl text-center px-5 py-1";
 const activeStyle =
-  "bg-clip-text text-transparent bg-gradient-to-r  to-[#b40000] from-[#540000] font-bold underline";
+  "bg-clip-text text-transparent bg-gradient-to-r  to-[#b40000] from-[#540000] font-bold underline font-serif";
 const Navbar = () => {
   const { user, logoutUser, setUser } = useContext(AuthContext);
 
@@ -63,7 +63,7 @@ const Navbar = () => {
         <>
           <NavLink
             className={({ isActive }) =>
-              `${defaultStyle} btn ${isActive && activeStyle}`
+              `${defaultStyle} ${isActive && activeStyle}`
             }
             to="/login"
           >
@@ -71,7 +71,7 @@ const Navbar = () => {
           </NavLink>
           <NavLink
             className={({ isActive }) =>
-              `${defaultStyle} btn ${isActive && activeStyle}`
+              `${defaultStyle} ${isActive && activeStyle}`
             }
             to="/register"
           >
@@ -83,7 +83,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className={`py-10 px-5 navbar z-50`}>
+    <div className={`py-0 lg:py-5 px-5 navbar z-50 font-serif`}>
       <div className="navbar-start">
         <div>
           <div className="dropdown  lg:hidden">
@@ -105,7 +105,7 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className={`menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow`}
+              className={`menu menu-sm bg-white dropdown-content mt-3 z-[1] p-2 shadow`}
             >
               {l1}
             </ul>
@@ -115,10 +115,10 @@ const Navbar = () => {
               to="/"
               className="flex items-center gap-3 font-bold normal-case text-3xl"
             >
-              <p className="p-2 pl-3 text-5xl  bg-gradient-to-r to-[#b40000] from-[#540000] font-bold text-white rounded-l-2xl">
+              <p className="p-2 pl-3 text-2xl lg:text-5xl  bg-gradient-to-r to-[#b40000] from-[#540000] font-bold text-white rounded-l-2xl">
                 FF
               </p>
-              <div className="bg-clip-text text-transparent bg-gradient-to-r to-[#540000] from-[#b40000]">
+              <div className="bg-clip-text text-lg text-transparent bg-gradient-to-r to-[#540000] from-[#b40000]">
                 <p>Flavor</p>
                 <p>Frontiers</p>
               </div>
@@ -161,7 +161,7 @@ const Navbar = () => {
           </div>
         </div>
       ) : (
-        <div className="flex flex-col lg:flex-row navbar-end  py-5 lg:py-0 gap-3">
+        <div className="flex flex-row mt-10 lg:mt-0 navbar-end  py-5 lg:py-0 gap-3">
           {l2}
         </div>
       )}

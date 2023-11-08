@@ -2,7 +2,11 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className={`text-xl footer footer-center p-10 rounded`}>
+    <footer
+      className={`font-serif text-red-800 text-xl footer footer-center py-3 px-10 rounded`}
+    >
+      <hr className="border-1 border-red-800 w-full"></hr>
+
       <nav className="grid grid-flow-col gap-4">
         <Link to="/" className="link link-hover">
           Home
@@ -51,6 +55,7 @@ const Footer = () => {
           </Link>
         </div>
       </nav>
+      <hr className="border-1 border-red-800 w-full"></hr>
       <aside>
         <p>
           Copyright © 2023 - All right reserved by{" "}

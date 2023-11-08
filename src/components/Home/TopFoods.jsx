@@ -17,8 +17,8 @@ const TopFoods = () => {
       });
   }, [foods]);
   return (
-    <div className="max-w-[1440px] mx-auto px-5 py-20">
-      <h3 className="pb-10 font-bold text-center text-2xl text-red-800 font-serif">
+    <div className="font-serif max-w-[1440px] mx-auto px-5 py-20">
+      <h3 className="pb-10 font-bold text-center text-3xl lg:text-5xl text-red-800 font-serif">
         Our Popular Foods
       </h3>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">

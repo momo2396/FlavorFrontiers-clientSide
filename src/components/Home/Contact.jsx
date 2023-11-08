@@ -6,49 +6,49 @@ const Contact = () => {
       </h3>
       <form className="card-body text-black bg-slate-100 rounded-lg">
         <div className="form-control">
-          <label className="label">
+          <label className="label font-serif">
             <span className="label-text">Name</span>
           </label>
           <input
             type="text"
             placeholder="your name"
             name="name"
-            className="input input-bordered"
+            className="input input-bordered font-serif"
             required
           />
         </div>
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Email</span>
+            <span className="label-text font-serif">Email</span>
           </label>
           <input
             type="email"
             placeholder="email"
             name="email"
-            className="input input-bordered"
+            className="input input-bordered font-serif"
             required
           />
         </div>
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Phone Number</span>
+            <span className="label-text font-serif">Phone Number</span>
           </label>
           <input
             type="text"
             placeholder="phone-number"
-            className="input input-bordered"
+            className="input input-bordered font-serif"
             name="number"
             required
           />
         </div>
         <div className="form-control">
-          <label className="label">
-            <span className="label-text">Your Message</span>
+          <label className="label ">
+            <span className="label-text font-serif">Your Message</span>
           </label>
           <textarea
             placeholder="message"
             name="message"
-            className="textarea textarea-bordered"
+            className="font-serif textarea textarea-bordered"
             required
           />
         </div>
