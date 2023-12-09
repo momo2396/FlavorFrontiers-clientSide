@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import FoodCard from "./FoodCard";
 import { useQuery } from "@tanstack/react-query";

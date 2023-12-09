@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const FoodCard = ({ food }) => {
   return (
-    <div className="hover:scale-110 duration-200 max-w-lg p-4 bg-gradient-to-t from-[#ba0001] to-white shadow-md font-serif flex flex-col justify-between font-serif">
+    <div className="hover:scale-110 duration-200 max-w-lg p-4 bg-gradient-to-t from-[#ba0001] to-white shadow-md font-serif flex flex-col justify-between">
       <div>
         <div className="flex justify-between pb-4 border-bottom">
           <div className="flex items-center">
